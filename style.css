@@ -344,21 +344,23 @@ h1, h2, h3 {
     border-bottom: 2px solid var(--gold);
     border-left: 2px solid var(--gold);
 }
-
 .about-badge {
     position: absolute;
-    bottom: 35px;
-    right: 0;
-    background: var(--gold);
+    bottom: 5px;
+    right: 10px;
+    background: rgba(201, 164, 92, 0.95);
     color: var(--black);
-    padding: 12px 20px;
+    padding: 8px 14px;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 11px;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
 }
+
 
 .about-badge span {
     font-size: 22px;
