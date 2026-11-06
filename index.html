@@ -44,6 +44,7 @@
                 <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
                 <a href="#about" data-ar="عن العيادات" data-en="About">عن العيادات</a>
                 <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                <div class="gallery-item"><img src="images/7.jpg" alt="صورة العيادة 7" loading="lazy"></div>
                 <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
             </nav>
 
@@ -293,6 +294,43 @@
         </div>
     </section>
 
+    <!-- Clinic Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label"
+                      data-ar="معرض الصور"
+                      data-en="Photo Gallery">معرض الصور</span>
+
+                <h2 data-ar="جولة داخل عياداتنا"
+                    data-en="Explore Our Clinic">
+                    جولة داخل عياداتنا
+                </h2>
+
+                <p data-ar="تعرفوا على عيادات الدكتور خالد الرواشدة."
+                   data-en="Discover Dr. Khaled Al-Rawashdeh Clinics.">
+                    تعرفوا على عيادات الدكتور خالد الرواشدة.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="صورة العيادة 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="صورة العيادة 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="صورة العيادة 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="صورة العيادة 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="صورة العيادة 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/6.jpg" alt="صورة العيادة 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/7.jpg" alt="صورة العيادة 7" loading="lazy"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="image-preview" id="imagePreview">
+        <span id="closePreview">&times;</span>
+        <img id="previewImage" src="" alt="صورة مكبرة">
+    </div>
 
     <!-- Call To Action -->
     <section class="cta">
@@ -478,6 +516,28 @@
             });
         });
 
+// Gallery Image Preview
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewImage = document.getElementById('previewImage');
+        const closePreview = document.getElementById('closePreview');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                previewImage.src = img.src;
+                imagePreview.style.display = 'flex';
+            });
+        });
+
+        closePreview.addEventListener('click', () => {
+            imagePreview.style.display = 'none';
+        });
+
+        imagePreview.addEventListener('click', e => {
+            if (e.target === imagePreview) {
+                imagePreview.style.display = 'none';
+            }
+        });
 
         // Footer Year
         document.getElementById("year").textContent =
